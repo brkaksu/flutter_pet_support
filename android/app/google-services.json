@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "386162944063",
+    "project_id": "pet-support-21828",
+    "storage_bucket": "pet-support-21828.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386162944063:android:ec63ad21dfd6513d9ef08a",
+        "android_client_info": {
+          "package_name": "com.burakaksu.flutter_pet_support"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "386162944063-qr3dgdarv0c8j96nt56d05i6jn44tbti.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.burakaksu.flutter_pet_support",
+            "certificate_hash": "7e3283800c1fd2a7f7b09110b028c3cfaf45b59d"
+          }
+        },
+        {
+          "client_id": "386162944063-fhbuc3hjbjq6jiaogemievoor1ojgqoo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVbPSR4OZPnGmujtJ0DJ9FmaaO7AQhYNk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "386162944063-fhbuc3hjbjq6jiaogemievoor1ojgqoo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
