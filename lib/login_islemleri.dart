@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_pet_support/user/user_homepage.dart';
 
 class LoginIslemleri extends StatefulWidget {
@@ -39,10 +40,10 @@ class _LoginIslemleriState extends State<LoginIslemleri> {
         padding: EdgeInsets.all(20.0),
         child: Form(
           key: girisKey,
-          autovalidateMode: AutovalidateMode.onUserInteraction,
           child: ListView(
             children: <Widget>[
               TextFormField(
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.email),
                   hintText: "Email Giriniz! ",
@@ -57,10 +58,7 @@ class _LoginIslemleriState extends State<LoginIslemleri> {
                   _email = girilenEmail;
                 },
                 validator: (String girilenVeri) {
-                  if (!(girilenVeri.contains("@gmail.com") ||
-                      girilenVeri.contains("@hotmail.com") ||
-                      girilenVeri.contains("@outlook.com") ||
-                      girilenVeri.contains("@bil.omu.edu.tr"))) {
+                  if (!(girilenVeri.contains("@gmail.com") || girilenVeri.contains("@hotmail.com") || girilenVeri.contains("@outlook.com") || girilenVeri.contains("@bil.omu.edu.tr"))) {
                     return "Lütfen geçerli bir e mail giriniz";
                   } else {
                     return null;
@@ -135,6 +133,7 @@ class _LoginIslemleriState extends State<LoginIslemleri> {
 
   void _emailSifreKullaniciGirisYap() async {
     girisKey.currentState.save();
+    girisKey.currentState.validate();
 
     try {
       if (_auth.currentUser == null) {
@@ -142,7 +141,7 @@ class _LoginIslemleriState extends State<LoginIslemleri> {
                 email: _email, password: _password))
             .user;
         debugPrint("Oturum açan kişinin emaili: " + _oturumAcanUser.email);
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>UserHomePage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>UserHomePage()));
       } else {
         debugPrint("Oturum açmış kullanıcı zaten var");
       }
